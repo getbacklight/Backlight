@@ -1,2 +1,2 @@
 # Backlight
-Modern CSS framework
+Modern SCSS framework.
