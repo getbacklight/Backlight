@@ -1,0 +1,291 @@
+//
+//  Default settings
+//  ---
+//
+//  Global
+//  ---
+//  Colors
+//  Modular scale
+//  Font settings
+//  UI (border-radius, -width, -style)
+//  Z-indexes
+//  Breakpoints
+//  Grid
+//  Increments
+//  Animations
+//
+//  Element settings
+//  ---
+//  Page
+//  Typography
+//  Images
+//  Forms
+//  Tables
+//
+//  Object settings
+//  ---
+//  Grid
+//  Media
+//
+//  Utilities
+//  ---
+//  Debug
+//
+
+// ---
+// Colors
+// ---
+
+// Palette function > eg. color(color-primary,base)
+@function color($palette, $shade: 'base') {
+    @return map-get(map-get($palettes, $palette), $shade);
+}
+
+// Base colors
+$color-neutral: #AAAAAA !default;
+$color-primary: #6391A6 !default;
+$color-secondary: #6F9F8D !default;
+$color-text: #565A5C !default;
+$color-error: #F44336 !default;
+$color-success: #66BB6A !default;
+$color-warning: #FFA726 !default;
+
+// Palettes
+$palettes: (
+    neutral: (
+        xlight                     : lighten($color-neutral,100),
+        light                      : lighten($color-neutral,10),
+        base                       : $color-neutral,
+        dark                       : darken($color-neutral,10),
+        xdark                      : darken($color-neutral,100)
+    ),
+    primary: (
+        light                      : lighten($color-primary,10),
+        base                       : $color-primary,
+        dark                       : darken($color-primary,10),
+        xdark                      : darken($color-primary,16.5)
+    ),
+    secondary: (
+        light                      : lighten($color-secondary,10),
+        base                       : $color-secondary,
+        dark                       : darken($color-secondary,10),
+        xdark                      : darken($color-secondary,16.5)
+    ),
+    text: (
+        light                      : lighten($color-text,10),
+        base                       : $color-text,
+        dark                       : darken($color-text,10),
+    )
+    error: (
+        light                      : lighten($color-error,10),
+        base                       : $color-error,
+        dark                       : darken($color-error,10),
+    ),
+    success: (
+        light                      : lighten($color-success,10),
+        base                       : $color-success,
+        dark                       : darken($color-success,10),
+    ),
+    warning: (
+        light                      : lighten($color-warning,10),
+        base                       : $color-warning,
+        dark                       : darken($color-warning,10),
+    )
+) !default;
+
+
+// ---
+// Font Size & Font Size Element Multipliers
+// ---
+
+$html-font-size: 16px !default;
+$html-font-line-height: 24px !default;
+$html-font-letter-spacing: 0.02em !default;
+$html-font-weight: 400 !default;
+$html-font-color: color(text) !default;
+$html-font-family: sans-serif !default;
+$html-font-smoothing: true !default;
+$html-font-size-element-multipliers: (
+    h1: 2.4,
+    h2: 2,
+    h3: 1.8,
+    h4: 1.5,
+    h5: 1.2,
+    h6: 1,
+    def: 1
+  ) !default;
+
+
+// ---
+// Page
+// ---
+
+$html-background-color: color(neutral,xlight) !default;
+$body-selection-background-color: color(neutral,dark) !default;
+$body-selection-color: color(neutral,light) !default;
+$body-selection-text-shadow: none !default;
+
+// ---
+// UI
+// ---
+
+$border-radius: 3px !default;
+$border-width: 1px !default;
+$border-style: solid !default;
+
+// ---
+// Z-indexes
+// ---
+
+$z-indexes: (
+    z1         : 1,
+    z2         : 2,
+    z3         : 3,
+    z4         : 4,
+    z5         : 5
+) !default;
+
+// ---
+// Breakpoints
+// ---
+
+$breakpoints: (
+    xs        :320,
+    s         :480,
+    m         :680,
+    l         :960,
+    xl        :1140
+) !default;
+
+// ---
+// Grid
+// ---
+
+$grid-columns: 12 !default;
+
+// ---
+// Animations
+// ---
+
+$animation-duration-alpha: 0.1s !default;
+$animation-duration-beta: 0.2s !default;
+$animation-duration-gamma: 0.3s !default;
+$animation-easing-alpha: ease-in-out !default;
+$animation-easing-beta: cubic-bezier(0.68, -0.55, 0.265, 1.55) !default; // bouncy
+
+// ---
+// Typography
+// ---
+
+$h1-font-family: $alpha-font-family !default;
+$h1-font-weight: $alpha-font-weight !default;
+$h1-font-size: $ms6 !default;
+$h1-line-height: 2 !default;
+$h1-margin-bottom: $alpha-leading !default;
+$h2-font-family: $alpha-font-family !default;
+$h2-font-weight: $alpha-font-weight !default;
+$h2-font-size: $ms4 !default;
+$h2-line-height: 1.5 !default;
+$h2-margin-bottom: $alpha-leading !default;
+$h3-font-family: $alpha-font-family !default;
+$h3-font-weight: $alpha-font-weight !default;
+$h3-font-size: $ms3 !default;
+$h3-line-height: 1.25 !default;
+$h3-margin-bottom: $alpha-leading !default;
+$h4-font-family: $alpha-font-family !default;
+$h4-font-weight: $alpha-font-weight !default;
+$h4-font-size: $ms2 !default;
+$h4-line-height: 1.25 !default;
+$h4-margin-bottom: $alpha-leading !default;
+$h5-font-family: $alpha-font-family !default;
+$h5-font-weight: $alpha-font-weight !default;
+$h5-font-size: $ms2 !default;
+$h5-line-height: 1 !default;
+$h5-margin-bottom: $alpha-leading !default;
+$h6-font-family: $alpha-font-family !default;
+$h6-font-weight: $alpha-font-weight !default;
+$h6-font-size: $ms1 !default;
+$h6-line-height: 1 !default;
+$h6-margin-bottom: $alpha-leading !default;
+$base-font-size: $alpha-font-size !default;
+$base-line-height: 1 !default;
+$base-margin-bottom: $beta-leading !default;
+$base-indent: 2 !default;
+$blockquote-font-style: italic !default;
+$blockquote-font-size: $ms1 !default;
+$blockquote-line-height: 1 !default;
+$blockquote-margin-bottom: $alpha-leading !default;
+$small-font-size: $ms-1 !default;
+$small-line-height: 1 !default;
+$small-margin-bottom: $alpha-leading !default;
+$horizontal-rule-border-width: 1px 0 0 !default;
+$horizontal-rule-border-style: solid !default;
+$horizontal-rule-border-color: palette(color-neutral,light) !default;
+$horizontal-rule-margin-top: 0 !default;
+$horizontal-rule-margin-bottom: $alpha-leading !default;
+$link-transition: none !default;
+$link-decoration: none !default;
+$link-decoration--hover: underline !default;
+$link-color: palette(color-alpha) !default;
+$link-color--visited: palette(color-alpha) !default;
+$link-color--hover: palette(color-alpha,light) !default;
+$link-color--focus: palette(color-alpha,light) !default;
+$link-outline: 0 !default;
+$link-outline--focus: thin dotted !default;
+
+// ---
+// Images
+// ---
+
+$img-max-width: 100% !default;
+$img-border: 0 !default;
+
+// ---
+// Forms
+// ---
+
+$fieldset-border: 0 !default;
+$fieldset-margin-bottom: $alpha-leading !default;
+$legend-font-size: $alpha-font-size !default;
+$legend-line-height: $alpha-line-height !default;
+$legend-margin-bottom: $alpha-leading !default;
+$label-font-size: $alpha-font-size !default;
+$label-line-height: $alpha-line-height !default;
+$label-margin-bottom: $alpha-leading !default;
+$placeholder-font-family: $alpha-font-family !default;
+$placeholder-font-style: italic !default;
+$placeholder-color: palette(color-neutral, light) !default;
+$firefox-inner-border-fix: true !default;
+
+// ---
+// Tables
+// ---
+
+$table-font-family: $alpha-font-family !default;
+$table-align: left !default;
+$caption-font-family: $alpha-font-family !default;
+$caption-font-weight: $beta-font-weight;
+$caption-align: center !default;
+$caption-margin-bottom: $alpha-leading !default;
+$caption-padding-bottom: $alpha-leading !default;
+
+// ---
+// Grid
+// ---
+
+$grid-max-width: map-get($breakpoints,bp5) !default;
+$grid-gutter: $columns-gutter !default;
+
+// ---
+// Media
+// ---
+
+$media-object-gutter: $columns-gutter !default;
+$media-object-margin-bottom: $alpha-leading !default;
+
+// ---
+// Media-embed
+// ---
+
+$media-embed-ratio: 62.5% !default;
+$media-embed-margin-bottom: $alpha-leading !default;

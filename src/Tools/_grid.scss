@@ -1,0 +1,7 @@
+@mixin flex-grid-generate($denominator, $extension: '') {
+    @for $numerator from 1 through $denominator {
+        .flex-grid-#{$numerator}\/#{$denominator}#{$extension} {
+            flex: 1 1 ($numerator / $denominator * 100%);
+        }
+    }
+}
