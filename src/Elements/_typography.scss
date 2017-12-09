@@ -1,0 +1,54 @@
+//  Elements: Typography
+//  --
+// Base site font size set in px, everything else in rem
+
+html {
+  -webkit-overflow-scrolling: touch;
+  @if $html-font-smoothing==true {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@each $breakpoint in map-keys($font-breakpoints) {
+  @include responsive($breakpoint) {
+    html {
+      $breakpoint-multiplier: map-get($font-breakpoints, $breakpoint);
+      font-size: $html-font-size * $breakpoint-multiplier;
+    }
+  }
+}
+
+html {
+  @include responsive('max-xs') {
+    $breakpoint-multiplier: map-get($font-breakpoints, 'xs');
+    font-size: $html-font-size * $breakpoint-multiplier;
+  }
+}
+
+/* Set header font sizes - these will be relative to html */
+
+h1 {
+  @include typography('h1', $html-font-family);
+}
+
+h2 {
+  @include typography('h2', $html-font-family);
+}
+
+h3 {
+  @include typography('h3', $html-font-family);
+}
+
+h4 {
+  @include typography('h4', $html-font-family);
+}
+
+h5 {
+  @include typography('h5', $html-font-family);
+}
+
+h6 {
+  @include typography('h6', $html-font-family);
+}

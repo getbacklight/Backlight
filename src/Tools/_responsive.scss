@@ -1,0 +1,27 @@
+//  Tools: Responsive
+//  --
+//  Responsive design using media queries based on breakpoints
+
+@mixin responsive($breakpoint) {
+  $max-index: str-index($breakpoint, 'max-');
+
+  @if $max-index == null {
+    @if map-has-key($size-breakpoints, $breakpoint) == false {
+      @warn 'Could not find key `#{$breakpoint}` in `$breakpoints` map.';
+    }
+    
+    @media (min-width: #{map-get($size-breakpoints, $breakpoint)}) { 
+      @content;
+    }
+  }
+  @else {
+    $breakpoint: str-slice($breakpoint, 5);
+    @if map-has-key($size-breakpoints, $breakpoint) == false {
+      @warn 'Could not find key `#{$breakpoint}` in `$breakpoints` map.';
+    }
+
+    @media (max-width: #{map-get($size-breakpoints, $breakpoint)}) { 
+      @content;
+    }
+  }
+}

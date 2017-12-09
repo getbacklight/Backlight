@@ -93,7 +93,6 @@ $palettes: (
     )
 ) !default;
 
-
 // ---
 // Font Size & Font Size Element Multipliers
 // ---
@@ -104,7 +103,11 @@ $html-font-letter-spacing: 0.02em !default;
 $html-font-weight: 400 !default;
 $html-font-color: color(text) !default;
 $html-font-family: sans-serif !default;
+$html-font-family-alt: 'Oxygen', sans-serif !default;
+
+$html-responsive-font-size: false !default;
 $html-font-smoothing: true !default;
+
 $html-font-size-element-multipliers: (
     h1: 2.4,
     h2: 2,
@@ -112,15 +115,16 @@ $html-font-size-element-multipliers: (
     h4: 1.5,
     h5: 1.2,
     h6: 1,
-    def: 1
-  ) !default;
-
+    default: 1
+) !default;
 
 // ---
 // Page
 // ---
 
 $html-background-color: color(neutral,xlight) !default;
+
+$body-background-color: color(neutral, xlight) !default;
 $body-selection-background-color: color(neutral,dark) !default;
 $body-selection-color: color(neutral,light) !default;
 $body-selection-text-shadow: none !default;
@@ -149,12 +153,19 @@ $z-indexes: (
 // Breakpoints
 // ---
 
-$breakpoints: (
-    xs        :320,
-    s         :480,
-    m         :680,
-    l         :960,
-    xl        :1140
+$size-breakpoints: (
+    xs        :460,
+    s         :680,
+    m         :940,
+    l         :1200,
+    xl        :1520
+) !default;
+
+$font-breakpoints: (
+    xs        :0.8,
+    s         :0.9,
+    m         :1,
+    l         :1.1
 ) !default;
 
 // ---
@@ -167,46 +178,16 @@ $grid-columns: 12 !default;
 // Animations
 // ---
 
-$animation-duration-alpha: 0.1s !default;
-$animation-duration-beta: 0.2s !default;
-$animation-duration-gamma: 0.3s !default;
-$animation-easing-alpha: ease-in-out !default;
-$animation-easing-beta: cubic-bezier(0.68, -0.55, 0.265, 1.55) !default; // bouncy
+$animation-duration-short: 0.1s !default;
+$animation-duration: 0.2s !default;
+$animation-duration-long: 0.3s !default;
+$animation-easing: ease-in-out !default;
+$animation-easing-cubic: cubic-bezier(0.68, -0.55, 0.265, 1.55) !default;
 
 // ---
 // Typography
 // ---
 
-$h1-font-family: $alpha-font-family !default;
-$h1-font-weight: $alpha-font-weight !default;
-$h1-font-size: $ms6 !default;
-$h1-line-height: 2 !default;
-$h1-margin-bottom: $alpha-leading !default;
-$h2-font-family: $alpha-font-family !default;
-$h2-font-weight: $alpha-font-weight !default;
-$h2-font-size: $ms4 !default;
-$h2-line-height: 1.5 !default;
-$h2-margin-bottom: $alpha-leading !default;
-$h3-font-family: $alpha-font-family !default;
-$h3-font-weight: $alpha-font-weight !default;
-$h3-font-size: $ms3 !default;
-$h3-line-height: 1.25 !default;
-$h3-margin-bottom: $alpha-leading !default;
-$h4-font-family: $alpha-font-family !default;
-$h4-font-weight: $alpha-font-weight !default;
-$h4-font-size: $ms2 !default;
-$h4-line-height: 1.25 !default;
-$h4-margin-bottom: $alpha-leading !default;
-$h5-font-family: $alpha-font-family !default;
-$h5-font-weight: $alpha-font-weight !default;
-$h5-font-size: $ms2 !default;
-$h5-line-height: 1 !default;
-$h5-margin-bottom: $alpha-leading !default;
-$h6-font-family: $alpha-font-family !default;
-$h6-font-weight: $alpha-font-weight !default;
-$h6-font-size: $ms1 !default;
-$h6-line-height: 1 !default;
-$h6-margin-bottom: $alpha-leading !default;
 $base-font-size: $alpha-font-size !default;
 $base-line-height: 1 !default;
 $base-margin-bottom: $beta-leading !default;
@@ -256,18 +237,6 @@ $placeholder-font-family: $alpha-font-family !default;
 $placeholder-font-style: italic !default;
 $placeholder-color: palette(color-neutral, light) !default;
 $firefox-inner-border-fix: true !default;
-
-// ---
-// Tables
-// ---
-
-$table-font-family: $alpha-font-family !default;
-$table-align: left !default;
-$caption-font-family: $alpha-font-family !default;
-$caption-font-weight: $beta-font-weight;
-$caption-align: center !default;
-$caption-margin-bottom: $alpha-leading !default;
-$caption-padding-bottom: $alpha-leading !default;
 
 // ---
 // Grid

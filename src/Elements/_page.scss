@@ -1,0 +1,29 @@
+//  Elements: Page
+//  --
+//  Page specific element properties
+
+html,
+body {
+    @include typography('default');
+    line-height: $html-font-line-height;
+}
+
+html {
+    background-color: $html-background-color;
+}
+
+body {
+    color: text-color($body-background-color);
+}
+
+::-moz-selection {
+    color: $body-selection-color;
+    text-shadow: $body-selection-text-shadow;
+    background-color: $body-selection-background-color;
+}
+
+::selection {
+    color: $body-selection-color;
+    text-shadow: $body-selection-text-shadow;
+    background-color: $body-selection-background-color;
+}

@@ -1,0 +1,21 @@
+//  Tools: Typography
+//  --
+//  Typographic specific mixins
+
+// Default typography settings for h1-h6 elements
+@mixin typography($element-key, $font-family: $html-font-family) {
+    $multiplier: map-get($html-font-size-element-multipliers, $element-key);
+    
+    font-size: 1rem * $multiplier;
+    font-family: $font-family;
+}
+
+// Calculates text color based on background, pass HEX
+// use: @include text-color(#f44336)
+@mixin text-color($hex-color) {
+    @if (.2126*red($hex-color) + .7152*green($hex-color) + .0722*blue($hex-color))/255 <= .5 {
+        color: mix(#FFF, $hex-color, 95%);
+    } @else {
+        color: mix(#000, $hex-color, 70%);
+    }
+}
