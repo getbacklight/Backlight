@@ -1,3 +1,7 @@
+//  Grid Layout
+//  --
+//  Generates grid classes (flexbox)
+
 @for $i from 1 through $grid-columns {
     @include flex-grid-generate($i);
 }

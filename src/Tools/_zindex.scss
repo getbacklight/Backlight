@@ -1,0 +1,12 @@
+//  Z-index Setting
+//  --
+//  Aspect ratio settings
+
+// Loop through the z-indexes map and get the value.
+@each $z-index,
+$value in $z-indexes {
+    // Z-index utility class (e.g. .z1)
+    .#{$z-index} {
+        z-index: $value;
+    }
+}

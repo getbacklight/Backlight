@@ -10,7 +10,7 @@
     font-family: $font-family;
 }
 
-// Calculates text color based on background, pass HEX
+// Calculates text color based on background, pass #HEX value
 // use: @include text-color(#f44336)
 @mixin text-color($hex-color) {
     @if (.2126*red($hex-color) + .7152*green($hex-color) + .0722*blue($hex-color))/255 <= .5 {
@@ -18,4 +18,10 @@
     } @else {
         color: mix(#000, $hex-color, 70%);
     }
+}
+
+// Breaks word with hyphen (URL's, unspaced text, etc)
+@mixin word-break {
+    word-break: break-all;
+    hyphens: auto;
 }
